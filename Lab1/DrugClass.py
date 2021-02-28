@@ -1,5 +1,5 @@
 class Drug:
-    drug_type = "pill"
+    type = "pill"
 
     def __init__(self, name, volume_of_active_substance, weight_in_mg, active_substance_name, max_doses_per_day):
         self.name = name
@@ -20,7 +20,7 @@ class Drug:
 
     @staticmethod
     def get_drug_type():
-        return Drug.drug_type
+        return Drug.type
 
 
 def main():
