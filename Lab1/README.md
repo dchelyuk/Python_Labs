@@ -23,7 +23,7 @@ This repo is for storing python labs from LPNU.
     - (у міліграмах)
     - діюча речовина
     - максимальна кількість доз на день
-
+    
     Eng:
     Create "Drug" class, which has these fields:
     - volume of operative substance
