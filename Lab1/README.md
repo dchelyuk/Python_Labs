@@ -1,10 +1,10 @@
 # Python_Labs
-This repo is for storing python labs from LPNU.
+***This repo is for storing python labs from LPNU.***
 
-    Lab #1:
+## Lab #1: ##
+    Creating Python "Drug" class
 
 ### Rules:
-
     Створити консольну програму мовою Python і написати клас <Назва_із_завдання> який міститиме:
     1. Три додаткових поля, які найкраще описують даний клас	
     2. Конструктор (із вказаними дефолтними значеннями)
@@ -18,7 +18,6 @@ This repo is for storing python labs from LPNU.
         файл.
 
 #### Task:
-
     Ukr:
     Створити клас “Лікарський засіб (англійською - Drug)” котрий містить поля:
     - об'єм діючої речовини
