@@ -1,7 +1,5 @@
-from DishwareItem import DishwareItem
 from SortOrder import SortOrder
 from Country import Country
-from typing import List
 
 
 class ShopManager:
