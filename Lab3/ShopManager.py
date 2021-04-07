@@ -11,18 +11,10 @@ class ShopManager:
         for i in self.goods:
             if i.country_origin.value == searched_country.value:
                 self.search_result.append(i)
-        for i in self.search_result:
-            i.get_info()
         return self.search_result
 
     def sort_by_country(self, order: SortOrder):
-        self.sorted_by_country = sorted(self.goods, key=lambda x: x.country_origin.value, reverse=order.value)
-        for i in self.sorted_by_country:
-            i.get_info()
-        return self.sorted_by_country
+        return sorted(self.goods, key=lambda x: x.country_origin.value, reverse=order.value)
 
     def sort_by_category(self, order: SortOrder):
-        self.sorted_by_category = sorted(self.goods, key=lambda x: x.category.value, reverse=order.value)
-        for i in self.sorted_by_country:
-            i.get_info()
-        return self.sorted_by_category
+        return sorted(self.goods, key=lambda x: x.category.value, reverse=order.value)
