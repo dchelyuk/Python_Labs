@@ -1,7 +1,8 @@
+from enums.Country import Country
+from enums.Category import Category
+from enums.Size import Size
 from DishwareItem import DishwareItem
-from Country import Country
-from Category import Category
-from Size import Size
+
 
 class Cutlery(DishwareItem):
     def __init__(self, price: float, _weight_in_g: float, _country_origin: Country, _brand: str, _code: int, _name: str,

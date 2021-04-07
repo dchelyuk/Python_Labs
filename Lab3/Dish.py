@@ -1,6 +1,6 @@
+from enums.Category import Category
+from enums.Country import Country
 from DishwareItem import DishwareItem
-from Country import Country
-from Category import Category
 from Material import Material
 from typing import List
 

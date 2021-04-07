@@ -1,5 +1,5 @@
-from Country import Country
-from Category import Category
+from enums.Category import Category
+from enums.Country import Country
 
 
 class DishwareItem:

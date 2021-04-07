@@ -1,9 +1,9 @@
+from enums.Country import Country
+from enums.Category import Category
+from enums.Shape import Shape
 from Dish import Dish
-from Country import Country
-from Category import Category
 from Material import Material
 from typing import List
-from Shape import Shape
 
 
 class Plate(Dish):
