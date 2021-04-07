@@ -15,4 +15,4 @@ class DishwareItem:
 
     def get_info(self):
         print(self._name, self._brand)
-        print(self.country_origin, self.price)
+        print(self.country_origin.value, self.price)
