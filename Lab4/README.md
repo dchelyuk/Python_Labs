@@ -2,8 +2,8 @@
 ***This repo is for storing python labs from LPNU.***
 
 ## Lab #4: ##
-    Creating Python tests to cover at least 70% of code from [a relative link](Lab3)
-    [Named Link](http://www.google.fr/ "Named link title") and http://www.google.fr/ or <http://example.com/>
+    Creating Python tests to cover at least 70% of code from Lab3
+[Lab3 link](https://github.com/dchelyuk/Python_Labs/tree/master/Lab3 "Named link title")
 
 ### Rules: ###
     Лабораторне завдання складається з трьох частин, першою частиною є намалювати UML діаграму класів
