@@ -14,5 +14,5 @@ class DishwareItem:
         self.category = category
 
     def get_info(self):
-        print(self._name, self._brand)
-        print(self.country_origin.value, self.price)
+        return self._name, self._brand, \
+               self.country_origin.value, self.price
