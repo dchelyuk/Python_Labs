@@ -1,14 +1,14 @@
 import unittest
-from enums.Category import Category
-from enums.Country import Country
-from enums.Purpose import Purpose
-from enums.Shape import Shape
-from enums.Size import Size
-from enums.SortOrder import SortOrder
-from Fork import Fork
-from Material import Material
-from Plate import Plate
-from ShopManager import ShopManager
+from Lab3.enums.Category import Category
+from Lab3.enums.Country import Country
+from Lab3.enums.Purpose import Purpose
+from Lab3.enums.Shape import Shape
+from Lab3.enums.Size import Size
+from Lab3.enums.SortOrder import SortOrder
+from Lab3.Fork import Fork
+from Lab3.Material import Material
+from Lab3.Plate import Plate
+from Lab3.ShopManager import ShopManager
 
 
 class TestShopManager(unittest.TestCase):
