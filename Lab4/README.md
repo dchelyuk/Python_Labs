@@ -3,52 +3,33 @@
 
 ## Lab #4: ##
     Creating Python tests to cover at least 70% of code from Lab3
-[Lab3 link](https://github.com/dchelyuk/Python_Labs/tree/master/Lab3 "Named link title")
+[Lab3 link](https://github.com/dchelyuk/Python_Labs/tree/master/Lab3 "Lab3")
 
 ### Rules: ###
-    Лабораторне завдання складається з трьох частин, першою частиною є намалювати UML діаграму класів
+    Лабораторне завдання складається з трьох частин:
+    1. Намалювати UML діаграму класів
+    2. Написати код до завдання з лабораторної №2
+    3. Написати модульні тести для коду лабораторної роботи №3 і досягти рівня покриття тестами 70%
 
     Загальні рекомендації:
-    1. Використовувати можливості ООП: класи, успадкування, поліморфізм, інкапсуляцію
-    2. Кожний клас повинен мати назву, яка повністю описує його суть, і інформативний склад. Атрибути і методи
-        класів слід визначити самостійно
-    3. Успадкування потрібно використовувати тільки тоді, коли воно має сенс. У випадку використання наслідування
-        кількість класів-нащадків має бути не меншою 2 і не більшою 4-ьох
-    4. При записі програми потрібно використовувати домовленості щодо оформлення коду python code convention
-    5. Зображати всі пари set/get (ака сеттери/геттери) для атрибутів класу не потрібно з метою уникнення засмічення
-        діаграми
-    6. Для реалізації операцій пошуку/сортування слід реалізувати окремий клас (в назві якого має бути присутнє
-        слово Manager)
-    7. UML діаграму класів можна малювати у draw.io, MS Visio або будь-якому іншому зручному інструментарії
-    8. Результуючу діаграму слід залити на Google Drive  у форматі
-        ClassDiagram_Programming_FirstName_LastName_GroupNumber.pdf
+    * В 4-ій лабораторній роботі слід написати модульні тести для коду лабораторної роботи №3 і досягти рівня покриття
+    тестами 70%.
+    * Очевидно, що ідеалом є покриття на рівні 100% (тобто кожна лінія коду покрита тестами).
+    * Також очевидно, що написання тестів потребує значну кількість часу, якого завжди бракує.
+    * Одним з варіантів униклення цієї проблеми є підхід TDD.
+    * Для даної лабораторної компромісним значенням буде покриття тестами на рівні 70%
 
 #### Task: ####
     Ukr:
-    Написати код до завдання з лабораторної №2.
-    - При записі програми потрібно використовувати домовленості щодо оформлення коду python code convention
-    - Класи потрібно грамотно розкласти по пакетах
-    - Робота з консоллю або консольне меню повинні бути мінімальними
-    - В коді мають бути присутні лиш ті класи, які містяться на діаграмі класів
-    - Атрибути класів та їх видимість мають співпадати із зазначеними на діаграмі класів. Те саме стосується методів
-        класів
-    - Для сортування слід використати вбудовані методи сортування, доступні в мові Python
-    - Сортування слід реалізувати в окремому методі
-    - Код немає містити статичних методів/атрибутів. Код має використовувати перелічувальний тип (Enum)
-    - Код слід залити в окремий репозиторій, попередньо створивши pull request (тобто код слід писати в окремому branch
-        на його основі зробити pull request)
-    - Для перевірки роботи вашого коду слід створити окремий клас, в якому буде знаходитись main метод.
+    Написати модульні тести для коду лабораторної роботи №3.
+    - тести, виконані в 4-й роботі мають бути додані до коду 3-ї роботи
+    - Покриття коду тестами має становити 70%
+    - Коміт в Github має  бути виконано як окремий pull request (але не потрібно виконувати merge)
+    - Код слід перевірити на відповідність вимогам РЕР8 та виправити знайдені зауваження
 
     Eng:
-    Write the code according to the task from the lab 2.
-    - Use the python code convention when writing a program
-    - Classes should be properly groupped into packages
-    - Interaction with the console or console menu should be minimal
-    - The code should contain only classes  listed in the diagram
-    - Class attributes, methods and their visibility must be identical with the class diagram
-    - Use the built-in Python sorting methods
-    - Sorting should be implemented in a separate method
-    - The code should not contain static methods or attributes. It must use an enum type
-    - The code should be in a separate repository, creating a pull request beforehand (the code should be in a separate
-        branch with a pull request to master branch)
-    - In order to test your code, create a separate class, where the main method will be located.
+    Write module testsfor the code of Lab №3.
+    - Tests should be added to the code of Lab №3
+    - Code coverage with tests should be at least 70%
+    - GitHub commit should be done as a separate pull request (but no need to do merge)
+    - Code should be checked according PEP8 requirements and corrected in case of mistakes
