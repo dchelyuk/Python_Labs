@@ -1,5 +1,6 @@
 # Python_Labs #
 ***This repo is for storing python labs from LPNU.***
+- - - -
 
 ## Lab #3: ##
     Creating Python data structure according to UML diagram from Lab2

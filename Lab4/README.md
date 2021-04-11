@@ -1,5 +1,6 @@
 # Python_Labs #
 ***This repo is for storing python labs from LPNU.***
+- - - -
 
 ## Lab #4: ##
     Creating Python tests to cover at least 70% of code from Lab3
