@@ -1,7 +1,7 @@
-from enums.Category import Category
-from enums.Country import Country
-from DishwareItem import DishwareItem
-from Material import Material
+from Lab3.enums.Category import Category
+from Lab3.enums.Country import Country
+from Lab3.DishwareItem import DishwareItem
+from Lab3.Material import Material
 from typing import List
 
 

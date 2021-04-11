@@ -1,8 +1,8 @@
-from enums.Country import Country
-from enums.Category import Category
-from enums.Shape import Shape
-from Dish import Dish
-from Material import Material
+from Lab3.enums.Country import Country
+from Lab3.enums.Category import Category
+from Lab3.enums.Shape import Shape
+from Lab3.Dish import Dish
+from Lab3.Material import Material
 from typing import List
 
 

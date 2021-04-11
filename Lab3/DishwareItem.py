@@ -1,5 +1,5 @@
-from enums.Category import Category
-from enums.Country import Country
+from Lab3.enums.Category import Category
+from Lab3.enums.Country import Country
 
 
 class DishwareItem:
