@@ -1,8 +1,8 @@
-from enums.Country import Country
-from enums.Category import Category
-from enums.Size import Size
-from enums.Purpose import Purpose
-from Cutlery import Cutlery
+from Lab3.enums.Country import Country
+from Lab3.enums.Category import Category
+from Lab3.enums.Size import Size
+from Lab3.enums.Purpose import Purpose
+from Lab3.Cutlery import Cutlery
 
 
 class Fork(Cutlery):

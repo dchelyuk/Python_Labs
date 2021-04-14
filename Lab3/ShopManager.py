@@ -1,5 +1,5 @@
-from enums.Country import Country
-from enums.SortOrder import SortOrder
+from Lab3.enums.Country import Country
+from Lab3.enums.SortOrder import SortOrder
 
 
 class ShopManager:

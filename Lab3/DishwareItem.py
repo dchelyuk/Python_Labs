@@ -1,5 +1,5 @@
-from enums.Category import Category
-from enums.Country import Country
+from Lab3.enums.Category import Category
+from Lab3.enums.Country import Country
 
 
 class DishwareItem:
@@ -14,5 +14,5 @@ class DishwareItem:
         self.category = category
 
     def get_info(self):
-        print(self._name, self._brand)
-        print(self.country_origin.value, self.price)
+        return self._name, self._brand, \
+               self.country_origin.value, self.price
