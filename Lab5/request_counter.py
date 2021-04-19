@@ -7,14 +7,6 @@ REQUEST_RESPONSE = r'2\d\d'
 REQUEST_FROM = r'22/Mar/2009:07:40:06'
 REQUEST_TO = r'30/Mar/2009:13:43:28'
 
-#  + r'.*' + REQUEST_TYPE + r' .*' + REQUEST_RETURN + r' .*' + REQUEST_RESPONSE + r' '
-# \[22/Mar/2009:
-# (0[7-9]|[1-2]\d):[45]\d:\d\d
-# 22/Mar/2009:(0[7-9]|[12]\d):[45]\d:(0[6-9]|[1-5]\d)
-# 2[3-9]/Mar/2009:\d\d:\d\d:\d\d
-# 30/Mar/2009:(0\d|1[1-3]):([0-3]\d|4[0-3]):([01]\d|2[0-8])
-# REQUEST_TIMERANGE + r'.*' + REQUEST_TYPE + r' .*' + REQUEST_RETURN + r' .*' + REQUEST_RESPONSE + r' '
-
 
 REQUEST_TIMERANGE = r'\[(22/Mar/2009:(0[7-9]|1\d|2[0-3]):[45]\d:(0[6-9]|[1-5]\d)|' \
                     r'2[3-9]/Mar/2009:\d\d:\d\d:\d\d|' \
@@ -37,4 +29,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
