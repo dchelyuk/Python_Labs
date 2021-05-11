@@ -1,7 +1,6 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
-from marshmallow import fields
 import os
 
 app = Flask(__name__)
@@ -44,27 +43,18 @@ dishware_items_schema = DishwareItemSchema(many=True)
 
 @app.route("/dishwareitem", methods=["POST"])
 def add_dishware_item():
-    price = request.json['price']
-    _weight_in_g = request.json['_weight_in_g']
-    country_origin = request.json['country_origin']
-    _brand = request.json['_brand']
-    _code = request.json['_code']
-    _name = request.json['_name']
-    category = request.json['category']
-
-    new_dishware_item = DishwareItem(price, _weight_in_g, country_origin, _brand, _code, _name, category)
-
+    data = dishware_item_schema.load(request.json)
+    new_dishware_item = DishwareItem(**data)
     db.session.add(new_dishware_item)
     db.session.commit()
-
-    return jsonify(new_dishware_item)
+    return dishware_item_schema.jsonify(new_dishware_item)
 
 
 @app.route("/dishwareitem", methods=["GET"])
 def get_dishware_item():
     all_dishware_items = DishwareItem.query.all()
-    result = dishware_item_schema.dump(all_dishware_items)
-    return jsonify(result.data)
+    result = dishware_items_schema.dump(all_dishware_items)
+    return dishware_items_schema.jsonify(result)
 
 
 @app.route("/dishwareitem/<id>", methods=["GET"])
@@ -73,24 +63,18 @@ def dishware_item_detail(id):
     return dishware_item_schema.jsonify(dishware_item)
 
 
-@app.route("/dishwareitem/<id>", methods=["PUT"])
+@app.route("/dishwareitem/<id>", methods=["POST", "PUT"])
 def dishware_item_update(id):
     dishware_item = DishwareItem.query.get(id)
-    price = request.json['price']
-    _weight_in_g = request.json['_weight_in_g']
-    country_origin = request.json['country_origin']
-    _brand = request.json['_brand']
-    _code = request.json['_code']
-    _name = request.json['_name']
-    category = request.json['category']
-
-    dishware_item.price = price
-    dishware_item._weight_in_g = _weight_in_g
-    dishware_item.country_origin = country_origin
-    dishware_item._brand = _brand
-    dishware_item._code = _code
-    dishware_item._name = _name
-    dishware_item.category = category
+    if not DishwareItem:
+        os.abort()
+    dishware_item.price = request.json['price']
+    dishware_item._weight_in_g = request.json['_weight_in_g']
+    dishware_item.country_origin = request.json['country_origin']
+    dishware_item._brand = request.json['_brand']
+    dishware_item._code = request.json['_code']
+    dishware_item._name = request.json['_name']
+    dishware_item.category = request.json['category']
 
     db.session.commit()
     return dishware_item_schema.jsonify(dishware_item)
@@ -99,6 +83,8 @@ def dishware_item_update(id):
 @app.route("/dishwareitem/<id>", methods=["DELETE"])
 def dishware_item_delete(id):
     dishware_item = DishwareItem.query.get(id)
+    if not DishwareItem:
+        os.abort()
     db.session.delete(dishware_item)
     db.session.commit()
 
