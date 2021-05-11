@@ -12,16 +12,6 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
 
-'''class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True)
-    email = db.Column(db.String(120), unique=True)
-
-    def __init__(self, username, email):
-        self.username = username
-        self.email = email'''
-
-
 class DishwareItem(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     price = db.Column(db.FLOAT, nullable=False)
@@ -43,16 +33,6 @@ class DishwareItem(db.Model):
         self.category = category
 
 
-'''class UserSchema(ma.Schema):
-    class Meta:
-        # Fields to expose
-        fields = ('username', 'email')
-
-
-user_schema = UserSchema()
-users_schema = UserSchema(many=True)'''
-
-
 class DishwareItemSchema(ma.Schema):
     class Meta:
         fields = ('price', '_weight_in_g', 'country_origin', '_brand', '_code', '_name', 'category')
@@ -60,20 +40,6 @@ class DishwareItemSchema(ma.Schema):
 
 dishware_item_schema = DishwareItemSchema()
 dishware_items_schema = DishwareItemSchema(many=True)
-
-
-'''# endpoint to create new user
-@app.route("/user", methods=["POST"])
-def add_user():
-    username = request.json['username']
-    email = request.json['email']
-
-    new_user = User(username, email)
-
-    db.session.add(new_user)
-    db.session.commit()
-
-    return jsonify(new_user)'''
 
 
 @app.route("/dishwareitem", methods=["POST"])
@@ -94,14 +60,6 @@ def add_dishware_item():
     return jsonify(new_dishware_item)
 
 
-'''# endpoint to show all users
-@app.route("/user", methods=["GET"])
-def get_user():
-    all_users = User.query.all()
-    result = users_schema.dump(all_users)
-    return jsonify(result.data)'''
-
-
 @app.route("/dishwareitem", methods=["GET"])
 def get_dishware_item():
     all_dishware_items = DishwareItem.query.all()
@@ -109,31 +67,10 @@ def get_dishware_item():
     return jsonify(result.data)
 
 
-'''# endpoint to get user detail by id
-@app.route("/user/<id>", methods=["GET"])
-def user_detail(id):
-    user = User.query.get(id)
-    return user_schema.jsonify(user)'''
-
-
 @app.route("/dishwareitem/<id>", methods=["GET"])
 def dishware_item_detail(id):
     dishware_item = DishwareItem.query.get(id)
     return dishware_item_schema.jsonify(dishware_item)
-
-
-'''# endpoint to update user
-@app.route("/user/<id>", methods=["PUT"])
-def user_update(id):
-    user = User.query.get(id)
-    username = request.json['username']
-    email = request.json['email']
-
-    user.email = email
-    user.username = username
-
-    db.session.commit()
-    return user_schema.jsonify(user)'''
 
 
 @app.route("/dishwareitem/<id>", methods=["PUT"])
@@ -157,16 +94,6 @@ def dishware_item_update(id):
 
     db.session.commit()
     return dishware_item_schema.jsonify(dishware_item)
-
-
-'''# endpoint to delete user
-@app.route("/user/<id>", methods=["DELETE"])
-def user_delete(id):
-    user = User.query.get(id)
-    db.session.delete(user)
-    db.session.commit()
-
-    return user_schema.jsonify(user)'''
 
 
 @app.route("/dishwareitem/<id>", methods=["DELETE"])
