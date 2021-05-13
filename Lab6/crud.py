@@ -1,3 +1,4 @@
+import flask
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -63,11 +64,11 @@ def dishware_item_detail(id):
     return dishware_item_schema.jsonify(dishware_item)
 
 
-@app.route("/dishwareitem/<id>", methods=["POST", "PUT"])
+@app.route("/dishwareitem/<id>", methods=["PUT"])
 def dishware_item_update(id):
     dishware_item = DishwareItem.query.get(id)
-    if not DishwareItem:
-        os.abort()
+    if not dishware_item:
+        flask.abort(404)
     dishware_item.price = request.json['price']
     dishware_item._weight_in_g = request.json['_weight_in_g']
     dishware_item.country_origin = request.json['country_origin']
@@ -83,8 +84,8 @@ def dishware_item_update(id):
 @app.route("/dishwareitem/<id>", methods=["DELETE"])
 def dishware_item_delete(id):
     dishware_item = DishwareItem.query.get(id)
-    if not DishwareItem:
-        os.abort()
+    if not dishware_item:
+        flask.abort(404)
     db.session.delete(dishware_item)
     db.session.commit()
 
